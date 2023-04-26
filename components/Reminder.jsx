@@ -8,7 +8,7 @@ const Reminder = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
-      fetch(`http://localhost:5000/reminder/${user.email}`).then((res) =>
+      fetch(`https://reminder-server.vercel.app/${user.email}`).then((res) =>
         res.json()
       ),
   });

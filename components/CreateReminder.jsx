@@ -20,7 +20,7 @@ const CreateReminder = () => {
     };
 
     fetch(
-      "http://localhost:5000/reminder",
+      "https://reminder-server.vercel.app/reminder",
 
       {
         method: "POST",
