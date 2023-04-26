@@ -5,7 +5,7 @@ import ReminderCard from "./ReminderCard";
 
 const Reminder = () => {
   const { user } = useContext(AuthContext);
-  const { isLoading, error, data } = useQuery({
+  const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
       fetch(`https://reminder-server.vercel.app/reminder/${user.email}`).then(
@@ -20,7 +20,7 @@ const Reminder = () => {
   return (
     <div className=" grid grid-cols-1 md:grid-cols-3 gap-6">
       {data.map((item, index) => (
-        <ReminderCard key={index} item={item} />
+        <ReminderCard key={index} item={item} refetch={refetch} />
       ))}
     </div>
   );

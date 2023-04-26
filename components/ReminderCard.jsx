@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast";
 
-const ReminderCard = ({ item }) => {
+const ReminderCard = ({ item, refetch }) => {
   const { title, date } = item;
   const my_date = date.slice(0, 10);
   const my_time = date.slice(11, 16);
@@ -9,6 +9,7 @@ const ReminderCard = ({ item }) => {
       method: "DELETE",
     }).then(() => {
       toast.success("Reminder deleted");
+      refetch();
     });
   };
 
