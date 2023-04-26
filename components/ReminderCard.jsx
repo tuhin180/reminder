@@ -8,8 +8,7 @@ const ReminderCard = ({ item }) => {
     fetch(`https://reminder-server.vercel.app/reminder/${item._id}`, {
       method: "DELETE",
     }).then(() => {
-      toast.remove("Reminder deleted");
-      window.location.reload();
+      toast.success("Reminder deleted");
     });
   };
 
