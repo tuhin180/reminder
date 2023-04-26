@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useContext } from "react";
 import { toast } from "react-hot-toast";
 
-const login = () => {
+const Login = () => {
   const { loginUser } = useContext(AuthContext);
   const router = useRouter();
   const handlelogin = (e) => {
@@ -142,4 +142,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
